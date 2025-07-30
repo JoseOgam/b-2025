@@ -21,18 +21,20 @@ const App = () => {
         <div>
           <h1 className=" text-3xl font-medium text-center">Recap</h1>
         </div>
-        <div className="flex-row justify-center items-center ">
-          <input
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="add input..."
-            className=" p-2 rounded-2xl border-b-gray-700 w-full max-w-md text-base"
-          />
-        </div>
-        <div className="flex justify-center gap-2">
-          <button onClick={add} className=" bg-blue-700 rounded-2xl p-1">
-            add Task
-          </button>
+        <div className="flex-row mb-3.5">
+          <div className="justify-center items-center ">
+            <input
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="add input..."
+              className=" p-2 rounded-2xl border-b-gray-700 w-full max-w-md text-base"
+            />
+          </div>
+          <div className="flex justify-center pt-3.5">
+            <button onClick={add} className=" bg-blue-700 rounded-2xl p-1">
+              add Task
+            </button>
+          </div>
         </div>
         <div>
           <ListTasks />

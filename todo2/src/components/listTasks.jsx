@@ -8,8 +8,10 @@ export const ListTasks = () => {
         <ul>
           {tasks.map((task, index) => (
             <li key={index}>
-              {task}
-              <button className="text-red-600 hover:text-red-800">❌</button>
+              <div className=" flex justify-between">
+                {index + 1}. {task}
+                <button className="text-red-600 hover:text-red-800">❌</button>
+              </div>
             </li>
           ))}
         </ul>
