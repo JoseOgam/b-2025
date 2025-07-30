@@ -1,9 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 const taskSlice = createSlice({
-  name: "todo",
-  initialState: ["jogging"],
+  name: "tasks",
+  initialState: {
+    list: ["jogging"],
+  },
   reducers: {
-    addTask: () => {},
+    addTask: (state, action) => {
+      state.list.push(action.payload);
+    },
     removeTask: () => {},
     clearTask: () => {},
   },
@@ -12,4 +16,5 @@ const taskSlice = createSlice({
 export const { addTask, removeTask, clearTask } = taskSlice.actions;
 const taskReducer = taskSlice.reducer;
 export default taskReducer;
+
 console.log("Redux Toolkit works!");
