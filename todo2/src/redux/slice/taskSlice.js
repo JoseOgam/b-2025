@@ -8,8 +8,13 @@ const taskSlice = createSlice({
     addTask: (state, action) => {
       state.list.push(action.payload);
     },
-    removeTask: () => {},
-    clearTask: () => {},
+    removeTask: (state, action) => {
+      // state.list = state.list.filter((task, index) => index !== action.payload);
+      state.list = state.list.filter((task, index) => index !== action.payload);
+    },
+    clearTask: (state, action) => {
+      state.list = [];
+    },
   },
 });
 
