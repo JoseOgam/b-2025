@@ -1,7 +1,9 @@
 "use client";
 import { setSearch } from "@/services/slice/jobSlice";
+import Link from "next/link";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Year } from "../footer/foote";
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -39,22 +41,23 @@ const Homepage = () => {
       <section className="grid gap-6 max-w-4xl mx-auto">
         {filteredJobs.length > 0 ? (
           filteredJobs.map((job: any) => (
-            <div
-              key={job.id}
-              className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition"
-            >
-              <h2 className="text-xl font-semibold text-gray-800">
-                {job.title}
-              </h2>
-              <p className="text-gray-600">{job.company}</p>
-              <div className="flex flex-wrap gap-4 mt-2 text-sm text-gray-500">
-                <span>📍 {job.location}</span>
-                <span>💼 {job.type}</span>
-                <span>💰 {job.salary}</span>
-              </div>
-              <button className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
-                Apply Now
-              </button>
+            <div key={job.id}>
+              <Link href={`/jobs/${job.id}`}>
+                <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+                  <h2 className="text-xl font-semibold text-gray-800">
+                    {job.title}
+                  </h2>
+                  <p className="text-gray-600">{job.company}</p>
+                  <div className="flex flex-wrap gap-4 mt-2 text-sm text-gray-500">
+                    <span>📍 {job.location}</span>
+                    <span>💼 {job.type}</span>
+                    <span>💰 {job.salary}</span>
+                  </div>
+                  <button className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+                    Apply Now
+                  </button>
+                </div>
+              </Link>
             </div>
           ))
         ) : (
@@ -64,7 +67,7 @@ const Homepage = () => {
 
       {/* Footer */}
       <footer className="text-center mt-12 text-gray-500 text-sm">
-        © {new Date().getFullYear()} JobBoard. All rights reserved.
+        © <Year /> JobBoard. All rights reserved.
       </footer>
     </div>
   );

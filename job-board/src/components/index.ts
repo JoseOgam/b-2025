@@ -1,3 +1,4 @@
 import Homepage from "./homepage/homePage";
+import { Year } from "./footer/foote";
 
-export { Homepage };
+export { Homepage, Year };
