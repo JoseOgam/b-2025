@@ -1,7 +1,7 @@
 "use client";
-import { CustomBtn } from "@/components";
+import { CustomBtn, Modal } from "@/components";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 type Params = {
@@ -14,6 +14,7 @@ const JobId = ({ params: paramsPromise }: { params: Promise<Params> }) => {
 
   const jobs = useSelector((state: any) => state.jobs.jobs || []);
   const job = jobs.find((j: any) => j.id.toString() === id);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // console.log("Params.id:", id);
   // console.log("Jobs:", jobs);
@@ -54,7 +55,14 @@ const JobId = ({ params: paramsPromise }: { params: Promise<Params> }) => {
             <CustomBtn
               title=" Apply Now"
               btnStyle="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+              handleClick={() => setIsModalOpen(true)}
             />
+            <div>
+              <Modal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+              />
+            </div>
           </div>
         ) : (
           <p className="text-red-500">Job not found</p>
