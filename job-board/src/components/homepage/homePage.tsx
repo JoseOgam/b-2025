@@ -3,7 +3,7 @@ import { setSearch } from "@/services/slice/jobSlice";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Year } from "../footer/footer";
+
 import { CustomBtn } from "../customBtn/customBtn";
 
 const Homepage = () => {
@@ -66,11 +66,6 @@ const Homepage = () => {
           <p className="text-center text-gray-500">No jobs found.</p>
         )}
       </section>
-
-      {/* Footer */}
-      <footer className="text-center mt-12 text-gray-500 text-sm">
-        © <Year /> JobBoard. All rights reserved.
-      </footer>
     </div>
   );
 };

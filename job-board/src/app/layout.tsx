@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ReduxProvider } from "./providers";
+import { Year } from "@/components";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ReduxProvider>{children}</ReduxProvider>
+
+        {/* Footer */}
+        <footer className="text-center pb-6 mt-12 text-gray-500 text-sm">
+          © <Year /> JobBoard. All rights reserved.
+        </footer>
       </body>
     </html>
   );

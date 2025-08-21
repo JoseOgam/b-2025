@@ -10,6 +10,25 @@ const initialState = {
       location: "Remote",
       type: "Full-time",
       salary: "$60k - $80k",
+      responsibilities: [
+        "Develop and maintain responsive web applications",
+        "Collaborate with designers and backend engineers to deliver high-quality products",
+        "Write clean, maintainable, and scalable code",
+        "Participate in code reviews and contribute to best practices",
+      ],
+      requirements: [
+        "Bachelor’s degree in Computer Science or equivalent experience",
+        "Proficiency in JavaScript, TypeScript, and React",
+        "Experience with Redux or other state management tools",
+        "Knowledge of REST APIs and integration",
+        "Strong problem-solving skills and attention to detail",
+      ],
+      benefits: [
+        "Health insurance",
+        "Remote-friendly work policy",
+        "Flexible working hours",
+        "Career development opportunities",
+      ],
     },
     {
       id: 2,
@@ -18,6 +37,25 @@ const initialState = {
       location: "Nairobi, Kenya",
       type: "Contract",
       salary: "$50/hr",
+      responsibilities: [
+        "Develop and maintain responsive web applications",
+        "Collaborate with designers and backend engineers to deliver high-quality products",
+        "Write clean, maintainable, and scalable code",
+        "Participate in code reviews and contribute to best practices",
+      ],
+      requirements: [
+        "Bachelor’s degree in Computer Science or equivalent experience",
+        "Proficiency in JavaScript, TypeScript, and React",
+        "Experience with Redux or other state management tools",
+        "Knowledge of REST APIs and integration",
+        "Strong problem-solving skills and attention to detail",
+      ],
+      benefits: [
+        "Health insurance",
+        "Remote-friendly work policy",
+        "Flexible working hours",
+        "Career development opportunities",
+      ],
     },
     {
       id: 3,
@@ -26,6 +64,25 @@ const initialState = {
       location: "Kisumu",
       type: "Part-time",
       salary: "$25/hr",
+      responsibilities: [
+        "Develop and maintain responsive web applications",
+        "Collaborate with designers and backend engineers to deliver high-quality products",
+        "Write clean, maintainable, and scalable code",
+        "Participate in code reviews and contribute to best practices",
+      ],
+      requirements: [
+        "Bachelor’s degree in Computer Science or equivalent experience",
+        "Proficiency in JavaScript, TypeScript, and React",
+        "Experience with Redux or other state management tools",
+        "Knowledge of REST APIs and integration",
+        "Strong problem-solving skills and attention to detail",
+      ],
+      benefits: [
+        "Health insurance",
+        "Remote-friendly work policy",
+        "Flexible working hours",
+        "Career development opportunities",
+      ],
     },
     {
       id: 4,
@@ -34,6 +91,25 @@ const initialState = {
       location: "Nairobi",
       type: "Part-time",
       salary: "$25/hr",
+      responsibilities: [
+        "Develop and maintain responsive web applications",
+        "Collaborate with designers and backend engineers to deliver high-quality products",
+        "Write clean, maintainable, and scalable code",
+        "Participate in code reviews and contribute to best practices",
+      ],
+      requirements: [
+        "Bachelor’s degree in Computer Science or equivalent experience",
+        "Proficiency in JavaScript, TypeScript, and React",
+        "Experience with Redux or other state management tools",
+        "Knowledge of REST APIs and integration",
+        "Strong problem-solving skills and attention to detail",
+      ],
+      benefits: [
+        "Health insurance",
+        "Remote-friendly work policy",
+        "Flexible working hours",
+        "Career development opportunities",
+      ],
     },
   ],
 };
