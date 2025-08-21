@@ -1,5 +1,6 @@
 import { ModalProps } from "@/types";
 import React from "react";
+import { CustomBtn } from "../customBtn/customBtn";
 
 export const Modal = ({ isOpen, onClose }: ModalProps) => {
   if (!isOpen) return null;
@@ -7,12 +8,11 @@ export const Modal = ({ isOpen, onClose }: ModalProps) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div className="bg-white rounded-lg shadow-lg w-full max-w-md p-6 relative">
         {/* Close button */}
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 text-gray-600 hover:text-black"
-        >
-          ✕
-        </button>
+        <CustomBtn
+          title="X"
+          handleClick={onClose}
+          btnStyle="absolute top-3 right-3 text-gray-600 hover:text-black"
+        />
 
         {/* Modal Content */}
         <h2 className="text-xl font-bold mb-4">Apply for Job</h2>
@@ -39,13 +39,10 @@ export const Modal = ({ isOpen, onClose }: ModalProps) => {
             <label className="block text-sm font-medium">Resume</label>
             <input type="file" className="w-full border rounded p-2 mt-1" />
           </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-          >
-            Submit Application
-          </button>
+          <CustomBtn
+            title=" Submit Application"
+            btnStyle="w-full bg-indigo-600 text-white py-2 rounded hover:bg-blue-700"
+          />
         </form>
       </div>
     </div>
