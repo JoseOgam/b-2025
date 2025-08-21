@@ -38,6 +38,7 @@ const initialState = {
       type: "Contract",
       salary: "$50/hr",
       responsibilities: [
+        "must be a quick learner",
         "Develop and maintain responsive web applications",
         "Collaborate with designers and backend engineers to deliver high-quality products",
         "Write clean, maintainable, and scalable code",
