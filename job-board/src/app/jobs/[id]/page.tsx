@@ -1,4 +1,5 @@
 "use client";
+import { CustomBtn } from "@/components";
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -28,9 +29,10 @@ const JobId = ({ params: paramsPromise }: { params: Promise<Params> }) => {
             <span>💼 {job.type}</span>
             <span>💰 {job.salary}</span>
           </div>
-          <button className="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
-            Apply Now
-          </button>
+          <CustomBtn
+            title=" Apply Now"
+            btnStyle="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+          />
         </div>
       ) : (
         <p className="text-red-500">Job not found</p>
