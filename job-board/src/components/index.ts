@@ -1,4 +1,5 @@
 import Homepage from "./homepage/homePage";
-import { Year } from "./footer/foote";
+import { Year } from "./footer/footer";
+import { CustomBtn } from "./customBtn/customBtn";
 
-export { Homepage, Year };
+export { Homepage, Year, CustomBtn };
