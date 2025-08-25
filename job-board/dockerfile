@@ -1,0 +1,19 @@
+# Step 1: Use official Node.js image
+FROM node:18
+
+# Step 2: Set working directory inside container
+WORKDIR /src
+
+# Step 3: Copy package.json and install dependencies
+COPY package.json yarn.lock ./
+RUN npm install
+
+# Step 4: Copy rest of the code
+COPY . .
+
+# Step 5: Build Next.js app
+RUN npm run build
+
+# Step 6: Expose port and run
+EXPOSE 3000
+CMD ["yarn", "start"]
