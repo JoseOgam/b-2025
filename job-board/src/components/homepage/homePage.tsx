@@ -1,7 +1,7 @@
 "use client";
 import { setSearch } from "@/services/slice/jobSlice";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { CustomBtn } from "../customBtn/customBtn";
@@ -15,6 +15,7 @@ const Homepage = () => {
       job.title.toLowerCase().includes(search.toLowerCase()) ||
       job.company.toLowerCase().includes(search.toLowerCase())
   );
+
   return (
     <div className="min-h-screen bg-gray-50 p-6">
       {/* Header */}
