@@ -8,7 +8,7 @@ const Login = () => {
   const [user, setUser] = useState({ email: "", password: "" });
   const onLogin = async () => {
     try {
-      const response = await axios.post("/api/users/login");
+      const response = await axios.post("/api/users/login", user);
       console.log("login success", response.data);
       router.push("/dashboard");
     } catch (error: any) {

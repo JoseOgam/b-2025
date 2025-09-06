@@ -7,8 +7,8 @@ const DashBoard = () => {
   const router = useRouter();
   const onLogout = async () => {
     try {
-      const response = await axios.get("/api/users/logout");
-      console.log("logout success", response.data);
+      await axios.get("/api/users/logout");
+      console.log("logout success");
       router.push("/login");
     } catch (error: any) {
       console.log("Logout failed", error.message);
