@@ -21,9 +21,7 @@ services:
     ports:
       - "8081:8081"
     environment:
-      # connect to the Mongo container by its service name "mongodb"
-      ME_CONFIG_MONGODB_URL: mongodb://admin:secret@mongodb:27017/?authSource=admin
-      # simple UI auth for the web dashboard
+      ME_CONFIG_MONGODB_URL: mongodb://admin:secret@mongodb:27017/jobboard?authSource=admin
       ME_CONFIG_BASICAUTH_USERNAME: admin
       ME_CONFIG_BASICAUTH_PASSWORD: admin
 
