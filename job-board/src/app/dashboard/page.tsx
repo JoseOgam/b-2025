@@ -1,10 +1,11 @@
 "use client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const DashBoard = () => {
   const router = useRouter();
+  const [user, setUser] = useState({ username: "", email: "" });
   const onLogout = async () => {
     try {
       await axios.get("/api/users/logout");
@@ -14,6 +15,18 @@ const DashBoard = () => {
       console.log("Logout failed", error.message);
     }
   };
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const res = await axios.get("/api/users/me");
+        setUser(res.data);
+      } catch (error: any) {
+        console.error("Failed to fetch user:", error);
+      }
+    };
+    fetchUser();
+  }, []);
   return (
     <div>
       <div>
@@ -24,6 +37,10 @@ const DashBoard = () => {
         >
           Logout
         </button>
+        <div className="p-6">
+          <h1 className="text-xl font-bold">Welcome, {user.username} 👋</h1>
+          <p>Email: {user.email}</p>
+        </div>
       </div>
     </div>
   );
