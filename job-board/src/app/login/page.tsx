@@ -9,8 +9,9 @@ const Login = () => {
   const onLogin = async () => {
     try {
       const response = await axios.post("/api/users/login", user);
-      console.log("login success", response.data);
+
       router.push("/dashboard");
+      return response;
     } catch (error: any) {
       console.log("Login failed", error.message);
     }
