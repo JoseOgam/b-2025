@@ -2,10 +2,6 @@ import mongoose from "mongoose";
 const jobsSchema = mongoose.Schema;
 
 const jobsModel = new jobsSchema({
-  id: {
-    type: Number,
-    required: true,
-  },
   title: {
     type: String,
     required: true,
