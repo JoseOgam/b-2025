@@ -1,4 +1,5 @@
 "use client";
+import { CustomBtn } from "@/components";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -14,6 +15,9 @@ const DashBoard = () => {
     } catch (error: any) {
       console.log("Logout failed", error.message);
     }
+  };
+  const addjobsRoute = () => {
+    router.push("/addjobs");
   };
 
   useEffect(() => {
@@ -40,6 +44,13 @@ const DashBoard = () => {
         <div className="p-6">
           <h1 className="text-xl font-bold">Welcome, {user.username} 👋</h1>
           <p>Email: {user.email}</p>
+        </div>
+        <div>
+          <CustomBtn
+            title="add Jobs"
+            handleClick={addjobsRoute}
+            btnStyle=" bg-emerald-700 pt-2 pb-2 px-2"
+          />
         </div>
       </div>
     </div>
