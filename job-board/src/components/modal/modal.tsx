@@ -27,6 +27,15 @@ export const Modal = ({ isOpen, onClose }: ModalProps) => {
           </div>
 
           <div>
+            <label className="block text-sm font-medium">Job Title</label>
+            <input
+              type="text"
+              className="w-full border rounded p-2 mt-1"
+              placeholder="front end developer"
+            />
+          </div>
+
+          <div>
             <label className="block text-sm font-medium">Email</label>
             <input
               type="email"
