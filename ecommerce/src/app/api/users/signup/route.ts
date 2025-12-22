@@ -2,6 +2,7 @@ import { connect } from "@/dbConfig/mongodb";
 import User from "@/models/userModels";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
+import crypto from "crypto";
 import { sendEmail } from "@/utils/sendEmail";
 
 connect();
@@ -25,17 +26,22 @@ export async function POST(request: NextRequest) {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
+    const verifyToken = crypto.randomBytes(32).toString("hex");
+
     // save user to database
 
     const newUser = new User({
       username,
       email,
       password: hashedPassword,
+      verifyToken,
+      verifyTokenExpiry: Date.now() + 24 * 60 * 60 * 1000, // 24 hrs
     });
 
     const saveUser = await newUser.save();
 
-    // console.log(saveUser);
+    const verifyUrl = `${process.env.DOMAIN}/verify-email?token=${verifyToken}`;
+
     try {
       await sendEmail({
         to: saveUser.email,
@@ -43,6 +49,9 @@ export async function POST(request: NextRequest) {
         html: `
       <h2>Welcome ${saveUser.username}</h2>
       <p>Your account was created successfully.</p>
+      <p>Please verify your email by clicking the link below:</p>
+      <a href="${verifyUrl}">Verify Email</a>
+      <p>This link expires in 24 hours.</p>
     `,
       });
     } catch (emailError) {
