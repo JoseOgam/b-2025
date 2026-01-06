@@ -21,10 +21,12 @@ const usersModel = new userSchema({
     type: Boolean,
     default: false,
   },
-  isAdmin: {
-    type: Boolean,
-    default: false,
+  role: {
+    type: String,
+    enum: ["customer", "admin"],
+    default: "customer",
   },
+
   forgotPasswordToken: String,
   forgotPasswordTokenExpiry: Date,
   verifyToken: String,
