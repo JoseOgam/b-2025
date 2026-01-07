@@ -1,38 +1,61 @@
 import mongoose from "mongoose";
 
-const userSchema = mongoose.Schema;
+const userSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      unique: true,
+      required: [true, "Please provide username"],
+      trim: true,
+    },
 
-const usersModel = new userSchema({
-  username: {
-    type: String,
-    unique: true,
-    required: [true, "please provide username"],
-  },
-  email: {
-    type: String,
-    unique: true,
-    required: [true, "please provide email"],
-  },
-  password: {
-    type: String,
-    required: [true, "please provide password"],
-  },
-  isVerified: {
-    type: Boolean,
-    default: false,
-  },
-  role: {
-    type: String,
-    enum: ["customer", "admin"],
-    default: "customer",
-  },
+    email: {
+      type: String,
+      unique: true,
+      required: [true, "Please provide email"],
+      lowercase: true,
+      trim: true,
+    },
 
-  forgotPasswordToken: String,
-  forgotPasswordTokenExpiry: Date,
-  verifyToken: String,
-  verifyTokenExpiry: Date,
-});
+    password: {
+      type: String,
+      required: [true, "Please provide password"],
+    },
 
-const User = mongoose.models.users || mongoose.model("users", usersModel);
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
+
+    // user → normal customer
+    // admin → manages orders & products
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
+
+    forgotPasswordToken: {
+      type: String,
+    },
+
+    forgotPasswordTokenExpiry: {
+      type: Date,
+    },
+
+    verifyToken: {
+      type: String,
+    },
+
+    verifyTokenExpiry: {
+      type: Date,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+const User = mongoose.models.User || mongoose.model("User", userSchema);
 
 export default User;
