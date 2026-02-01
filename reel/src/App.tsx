@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-import "./App.css";
+import CustomButton from "./components/CustomButton";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,12 +16,32 @@ function App() {
 
   return (
     <>
-      <div className="card">
+      <div className="flex flex-col h-screen items-center justify-center bg-amber-100">
         <div> {count} </div>
-        <div>
-          <button onClick={add}>Add</button>
-          <button onClick={reset}>reset</button>
-          <button onClick={subtract}>subtract</button>
+        <div className="flex flex-row space-x-3">
+          <div>
+            <CustomButton
+              title="Add"
+              containerStyles=" bg-emerald-600 rounded-3xl p-1"
+              handleClick={add}
+            />
+          </div>
+
+          <div>
+            <CustomButton
+              title="reset"
+              containerStyles=" bg-amber-300  rounded-3xl p-1"
+              handleClick={reset}
+            />
+          </div>
+
+          <div>
+            <CustomButton
+              title="subtract"
+              containerStyles=" bg-red-400  rounded-3xl p-1"
+              handleClick={subtract}
+            />
+          </div>
         </div>
       </div>
     </>
