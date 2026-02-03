@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addMessage } from "../services/contactSlice";
 
 const Contact = () => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
@@ -16,7 +19,9 @@ const Contact = () => {
 
   const handleSubmit = (e: React.SubmitEvent) => {
     e.preventDefault();
-    console.log(formData);
+
+    dispatch(addMessage(formData));
+
     alert("message sent successfully");
     // clear form
 
