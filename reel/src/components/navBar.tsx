@@ -13,9 +13,15 @@ const NavBar = () => {
         {/* Desktop Menu */}
 
         <div className="hidden md:flex space-x-6">
-          <Link to="/">Home</Link>
-          <Link to="/contact">Contact</Link>
-          <Link to="/about">About</Link>
+          <Link className=" hover:text-blue-300 transition" to="/">
+            Home
+          </Link>
+          <Link className=" hover:text-blue-300 transition" to="/contact">
+            Contact
+          </Link>
+          <Link className=" hover:text-blue-300 transition" to="/about">
+            About
+          </Link>
         </div>
 
         {/* mobile menu button*/}
@@ -28,13 +34,25 @@ const NavBar = () => {
 
         {isOpen && (
           <div className=" md:hidden flex flex-col items-center space-y-3 pb-4 bg-white ">
-            <Link to="/" onClick={() => setIsOpen(false)}>
+            <Link
+              className=" hover:text-blue-300 transition"
+              to="/"
+              onClick={() => setIsOpen(false)}
+            >
               Home
             </Link>
-            <Link to="/contact" onClick={() => setIsOpen(false)}>
+            <Link
+              className=" hover:text-blue-300 transition"
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+            >
               Contact
             </Link>
-            <Link to="/about" onClick={() => setIsOpen(false)}>
+            <Link
+              className=" hover:text-blue-300 transition"
+              to="/about"
+              onClick={() => setIsOpen(false)}
+            >
               About
             </Link>
           </div>
