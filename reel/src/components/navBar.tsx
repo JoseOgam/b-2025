@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Logo from "../assets/logo.png";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,9 @@ const NavBar = () => {
     <div className="fixed top-0 left-0 w-full bg-white shadow-md z-50 ">
       <div className="flex flex-row justify-between  px-3 py-4">
         {/* Logo */}
-        <h1 className="text-xl font-bold">My site</h1>
+        <div>
+          <img src={Logo} width={70} height={100} alt="Logo" />
+        </div>
 
         {/* Desktop Menu */}
 
