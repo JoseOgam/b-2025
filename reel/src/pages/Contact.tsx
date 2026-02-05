@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addMessage } from "../services/contactSlice";
+import CustomButton from "../components/CustomButton";
 
 const Contact = () => {
   const dispatch = useDispatch();
@@ -65,15 +66,17 @@ const Contact = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="border resize-none p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="write your message here..."
           />
-          <button
-            type="submit"
-            className="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
-          >
-            Send Message
-          </button>
+
+          <div className="flex items-center justify-center">
+            <CustomButton
+              title="Send Message"
+              containerStyles="bg-blue-600 text-white py-3 px-3 rounded-lg hover:bg-blue-700 transition"
+              btnType="submit"
+            />
+          </div>
         </form>
       </div>
     </div>

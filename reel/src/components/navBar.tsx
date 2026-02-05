@@ -19,11 +19,14 @@ const NavBar = () => {
           <Link className=" hover:text-blue-300 transition" to="/">
             Home
           </Link>
-          <Link className=" hover:text-blue-300 transition" to="/contact">
-            Contact
-          </Link>
           <Link className=" hover:text-blue-300 transition" to="/about">
             About
+          </Link>
+          <Link className=" hover:text-blue-300 transition" to="">
+            Gallery
+          </Link>
+          <Link className=" hover:text-blue-300 transition" to="/contact">
+            Contact
           </Link>
         </div>
 
@@ -46,17 +49,24 @@ const NavBar = () => {
             </Link>
             <Link
               className=" hover:text-blue-300 transition"
-              to="/contact"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
-            <Link
-              className=" hover:text-blue-300 transition"
               to="/about"
               onClick={() => setIsOpen(false)}
             >
               About
+            </Link>
+            <Link
+              className=" hover:text-blue-300 transition"
+              to=""
+              onClick={() => setIsOpen(false)}
+            >
+              Gallery
+            </Link>
+            <Link
+              className=" hover:text-blue-300 transition"
+              to="/contact"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
             </Link>
           </div>
         )}
