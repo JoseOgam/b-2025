@@ -7,7 +7,7 @@ function App() {
     <div className="flex items-center justify-center">
       <Routes>
         <Route path="/" element={<CharacterList />} />
-        <Route path="/character/id" element={<CharacterDetails />} />
+        <Route path="/character/:id" element={<CharacterDetails />} />
       </Routes>
     </div>
   );

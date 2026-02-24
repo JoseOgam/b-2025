@@ -20,10 +20,7 @@ const CharacterList = () => {
 
       <div className="grid grid-cols-8">
         {data?.map((char) => (
-          <div
-            key={char.id}
-            onClick={() => navigate(`/character/${char.name}`)}
-          >
+          <div key={char.id} onClick={() => navigate(`/character/${char.id}`)}>
             <div>
               {char.image ? (
                 <img src={char.image} width={150} alt="character image" />

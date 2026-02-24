@@ -10,10 +10,10 @@ export const hpApi = createApi({
     getCharacters: builder.query<Character[], void>({
       query: () => "/characters",
     }),
-    getCharacterByName: builder.query<Character, string>({
-      query: (id) => `/characters/${id}`,
+    getCharacterById: builder.query<Character[], string>({
+      query: (id) => `/character/${id}`,
     }),
   }),
 });
 
-export const { useGetCharactersQuery, useGetCharacterByNameQuery } = hpApi;
+export const { useGetCharactersQuery, useGetCharacterByIdQuery } = hpApi;
