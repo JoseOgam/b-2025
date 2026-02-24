@@ -18,12 +18,22 @@ const CharacterList = () => {
         <h2>Harry Potter Characters</h2>
       </div>
 
-      <div className="grid grid-cols-8">
+      <div className="grid grid-cols-2 sm:grid-cols-6 ">
         {data?.map((char) => (
-          <div key={char.id} onClick={() => navigate(`/character/${char.id}`)}>
+          <div
+            key={char.id}
+            onClick={() => navigate(`/character/${char.id}`)}
+            className="flex cursor-pointer rounded-2xl flex-col"
+          >
             <div>
               {char.image ? (
-                <img src={char.image} width={150} alt="character image" />
+                <img
+                  src={char.image}
+                  width={150}
+                  height={150}
+                  alt="character image"
+                  className=" rounded-3xl"
+                />
               ) : (
                 <div>
                   <h1>No image found</h1>
@@ -31,7 +41,7 @@ const CharacterList = () => {
               )}
             </div>
 
-            <h3>{char.name}</h3>
+            <h3 className=" font-semibold">{char.name}</h3>
             <p>{char.house}</p>
           </div>
         ))}
