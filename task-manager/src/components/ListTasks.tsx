@@ -6,7 +6,7 @@ const ListTasks = () => {
   console.log(tasks);
   return (
     <div>
-      <h2>List Tasks</h2>
+      <h2 className="flex justify-center pb-6 text-5xl">Tasks List</h2>
       {tasks.map((task: any) => (
         <TaskItem key={task.id} task={task} />
       ))}

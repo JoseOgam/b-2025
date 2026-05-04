@@ -3,10 +3,14 @@ import TaskForm from "../components/TaskForm";
 
 const Home = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <h1>Task Manager</h1>
-      <TaskForm />
-      <ListTasks />
+      <div className=" pb-6 ">
+        <TaskForm />
+      </div>
+      <div>
+        <ListTasks />
+      </div>
     </div>
   );
 };
